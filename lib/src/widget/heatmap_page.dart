@@ -147,27 +147,26 @@ class HeatMapPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             // Show week labels to left side of heatmap.
-            HeatMapWeekText(
-              margin: margin,
-              fontSize: fontSize,
-              size: size,
-              fontColor: textColor,
-            ),
+            // HeatMapWeekText(
+            //   margin: margin,
+            //   fontSize: fontSize,
+            //   size: size,
+            //   fontColor: textColor,
+            // ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Show month labels to top of heatmap.
-                HeatMapMonthText(
+                // Heatmap itself.
+                Row(
+                  children: <Widget>[..._heatmapColumnList()],
+                ),
+                 // Show month labels to bottom of heatmap.
+                 HeatMapMonthText(
                   firstDayInfos: _firstDayInfos,
                   margin: margin,
                   fontSize: fontSize,
                   fontColor: textColor,
                   size: size,
-                ),
-
-                // Heatmap itself.
-                Row(
-                  children: <Widget>[..._heatmapColumnList()],
                 ),
               ],
             ),
